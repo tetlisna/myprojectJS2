@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Qwitcher+Grypen&family=Roboto:wght@300&display=swap');
+:root {
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --max-width: 1170px;
+    --fixed-width: 620px;
+    --white-bg:rgb(255, 255, 255);
+    --dark-grey:rgb(100, 100, 100);
+    --grey-red
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    max-width: 980px;
+    margin: auto;
+}
+a {
+    text-decoration: none;
+  }
+body {
+    font-family: 'Lobster', cursive,'Qwitcher Grypen', cursive,'Roboto', sans-serif;
+    background: var(--white-bg);
+    color: var(--dark-grey);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+p {
+    margin-bottom: 1.25rem;
+    color: var(--dark-grey);
+}
+.hero-btn {
+    color: var(--dark-grey);
+}
+
+ @media screen and (min-width: 800px) {
+    h1 {
+        font-size: 4rem;
+
+    } 
+    body {
+        font-size: 1rem;
+    }
+ }
+.img {
+    width: 100%;
+    display: block;
+}
+.main {
+    width: 90vw;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.main:hover {
+    background: var(--clr-primary-3);
+}
+.cart-side {
+    background: var(--clr-primary-5);
+    color: var(--clr-white);
+    border-radius: var(--radius);
+    padding: 0.375rem 0.75rem;
+    letter-spacing: var(--spacing);
+    display: inline-block;
+    transition: var(--transition);
+    border-color: transparent;
+    cursor: pointer;
+  }
+  /* .cart-side:hover {
+    background: var(--white-bg);
+    color: var(--dark-grey);
+  } */
+.nav-logo {
+    background: var(--clr-primary-5);
+    border-color: transparent;
+    color: var(--clr-white);
+    width: 3.75rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}

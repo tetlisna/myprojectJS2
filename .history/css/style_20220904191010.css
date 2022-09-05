@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Qwitcher+Grypen&family=Roboto:wght@300&display=swap');
+:root {
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --max-width: 1170px;
+    --fixed-width: 620px;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    max-width: 980px;
+    margin: auto;
+}
+body {
+    font-family: 'Lobster', cursive;
+    font-family: 'Qwitcher Grypen', cursive;
+    font-family: 'Roboto', sans-serif;
+}
