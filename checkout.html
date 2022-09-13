@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+  />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Checkout</title>
+  </head>
+  <body>
+    <!-- Nav left -->
+    <nav class="navbar">
+      <div class="navbar-inside">
+        <div class="wrapper">
+          <button class="nav-toggle">
+            <i class="fa-sharp fa-solid fa-bars"></i>
+          </button>
+          <ul class="nav-links">
+            <li>
+              <a href="/index.html" class="nav-link">Home</a>
+            </li>
+            <li>
+              <a href="/product.html" class="nav-link">Products</a>
+            </li>
+            <li>
+              <a href="/cart.html" class="nav-link">Cart</a>
+            </li>
+            <!-- <li>
+              <a href="/orders.html" class="nav-link">Order</a>
+            </li> -->
+          </ul>
+        </div>
+        <!-- Logo -->
+        <img src="/img/logo.webp" class="logo" alt="logo" width="100px" />
+        <div class="cart-container">
+          <a href="/cart.html">
+            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+          </a>
+          <span class="cart-item-count">0</span>
+        </div> 
+      </div>
+    </nav>
+   <div class="header"><h1>Checkout</h1></div>
+    <section class="cart-chekout"></section>
+    <section class="user-chekout">
+      <div class="w-full md:w-96 md:max-w-full mx-auto">
+        <div class="p-6 border border-gray-300 sm:rounded-md">
+          <form method="POST" action="#">
+            <label class="block mb-6">
+              <span class="text-gray-700">Your name</span>
+              <input type="text" name="name"
+                class="
+                  block
+                  w-full
+                  mt-1
+                  border-gray-300
+                  rounded-md
+                  shadow-sm
+                  focus:border-indigo-300
+                  focus:ring
+                  focus:ring-indigo-200
+                  focus:ring-opacity-50
+                "
+                placeholder="Joe Bloggs"/>
+            </label>
+            
+            <label class="block mb-6">
+              <span class="text-gray-700">Email address</span>
+              <input
+                name="email"
+                type="email"
+                class="
+                  block
+                  w-full
+                  mt-1
+                  border-gray-300
+                  rounded-md
+                  shadow-sm
+                  focus:border-indigo-300
+                  focus:ring
+                  focus:ring-indigo-200
+                  focus:ring-opacity-50
+                "
+                placeholder="joe.bloggs@example.com"
+                required
+              />
+            </label>
+
+            <label class="block mb-6">
+              <span class="text-gray-700">Phone number</span>
+              <input
+                name="tel"
+                type="tel"
+                class="
+                  block
+                  w-full
+                  mt-1
+                  border-gray-300
+                  rounded-md
+                  shadow-sm
+                  focus:border-indigo-300
+                  focus:ring
+                  focus:ring-indigo-200
+                  focus:ring-opacity-50
+                "
+                placeholder="+380-"
+                required
+              />
+            </label>          
+            <div class="block mb-6">
+              <button type="submit" class="update">Create order</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    
+    </section>
+    <script src="/js/admin.js"></script>
+    <script src="/js/product-service.js"></script>
+    <script src="/js/cart.js"></script>
+  </body>
+</html>
+  </html>

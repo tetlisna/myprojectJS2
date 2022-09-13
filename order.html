@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+  />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Cart</title>
+  </head>
+  <body>
+    <!-- Nav left -->
+    <nav class="navbar">
+      <div class="navbar-inside">
+        <div class="wrapper">
+          <button class="nav-toggle">
+            <i class="fa-sharp fa-solid fa-bars"></i>
+          </button>
+          <ul class="nav-links">
+            <li>
+              <a href="/index.html" class="nav-link">Home</a>
+            </li>
+            <li>
+              <a href="/product.html" class="nav-link">Products</a>
+            </li>
+            <li>
+              <a href="/cart.html" class="nav-link">Cart</a>
+            </li>
+            <!-- <li>
+              <a href="/orders.html" class="nav-link">Order</a>
+            </li> -->
+          </ul>
+        </div>
+        <!-- Logo -->
+        <img src="/img/logo.webp" class="logo" alt="logo" width="100px" />
+        <div class="cart-container">
+          <a href="/cart.html">
+            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+          </a>
+          <span class="cart-item-count">0</span>
+        </div> 
+      </div>
+    </nav>
+    <section class="cart-products">
+      <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                  <th scope="col" class="py-3 px-6">
+                      Product name
+                  </th>
+                  <th scope="col" class="py-3 px-6">
+                      Amount
+                  </th>
+                  <th scope="col" class="py-3 px-6">
+                      Status
+                  </th>
+                  <th scope="col" class="py-3 px-6">
+                      Price
+                  </th>
+                  <th scope="col" class="py-3 px-6">
+                      Action
+                  </th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr class="cart-container bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h3 class="title"></h3>
+    <div class="links">
+        <button class="addtocart shop-btn" data-id=${product.id}>Add to cart</button>
+        <a href="/product.html" class="shop-btn" data-id=${product.id}> Remove</a>
+    </div>
+
+    <div class="checkout">
+      <a href="/checkout.html">Checkout</a>
+    </div>
+    </section>
+    <script src="/js/admin.js"></script>
+    <script src="/js/product-service.js"></script>
+    <script src="/js/cart.js"></script>
+  </body>
+</html>

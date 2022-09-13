@@ -8,11 +8,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-     <script src="https://cdn.tailwindcss.com"></script>
-
-    <title>E-commers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Product</title>
   </head>
   <body>
+   
+    <!-- Nav left -->
     <nav class="navbar">
       <div class="navbar-inside">
         <div class="wrapper">
@@ -34,25 +35,24 @@
             </li> -->
           </ul>
         </div>
+        <!-- Logo -->
         <img src="/img/logo.webp" class="logo" alt="logo" width="100px" />
-        <div class="cart-container" id="cart-products">
-          <a href="/cart.html">
+        <div class="cart-container">
+          <a href="/cart.html" class="cart-side">
             <i class="fa-sharp fa-solid fa-cart-shopping"></i>
           </a>
           <span class="cart-item-count">0</span>
         </div> 
       </div>
-    </nav>  
-    <!-- Products --> 
-    <!-- <h1 class="main-title">Buy & Enjoy</h1> -->
-
-    <section class="container mx-auto" id="products">
+    </nav>
+    <section class="container" id="prod-details">
       <div class="grid grid-cols-3 gap-4">
+
       </div>
     </section>
-      <script src="/js/admin.js"></script>
-      <script src="/js/product-service.js"></script>
-      <script src="/js/productList.js"></script>
-      <script src="/js/cart.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/product-service.js"></script>
+    <script src="/js/product-details.js"></script>
+    <script src="/js/cart.js"></script>
   </body>
 </html>
