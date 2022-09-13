@@ -23,7 +23,7 @@ class Cart {
         up.addEventListener('click', this.updateAmount.bind(this));
     });
     document.querySelectorAll(".clearcart").forEach(up => {
-        up.addEventListener('click', this.updateAmount.bind(this));
+        up.addEventListener('click', this.withdrowCart.bind(this));
     });
     
   }
@@ -181,9 +181,11 @@ class Cart {
       this.cart
     ).length;
   }
-//   withdrowCart() {
-//     document.querySelector(".clearcart").innerHTML = {};
-//     this.cart = {};
-// }
+  withdrowCart() {
+    this.cart = {};
+    this.saveCart();
+    this.updateBadge();
+    this.renderCart();
+}
 }
 new Cart();
