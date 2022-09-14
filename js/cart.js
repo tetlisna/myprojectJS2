@@ -25,6 +25,9 @@ class Cart {
     document.querySelectorAll(".clearcart").forEach(up => {
         up.addEventListener('click', this.withdrowCart.bind(this));
     });
+    document.querySelectorAll(".createorder").forEach(up => {
+      up.addEventListener('click', this.saveOrder.bind(this));
+  });
     
   }
 
@@ -47,10 +50,12 @@ class Cart {
                 <th scope="col" class="py-3 px-6">
                     Price
                 </th>
+                <th scope="col" class="py-3 px-6">
+                  Action
+                </th>
               </tr>
           </thead>
           <tbody>
-
           `;
     
     for (const productId in this.cart) {
@@ -66,7 +71,6 @@ class Cart {
         </th>
         <th scope="col" class="py-3 px-6"><a href="/checkout.html" class="update">Checkout</a>
         <a href="#" class="clearcart shop-btn">Clear cart</a>
-
         </th>
         `;
     cartDom += `</tbody>
@@ -109,7 +113,7 @@ class Cart {
         <th scope="col" class="py-3 px-6"><strong>$${total.toFixed(2)}</strong>
         
         </th>
-        <th scope="col" class="py-3 px-6"><a href="/checkout.html" class="update">Create order</a>
+        <th scope="col" class="py-3 px-6"><button class="createorder">Create order</a>
         </th>
         `;
     cartDom += `</tbody>
@@ -126,9 +130,16 @@ class Cart {
         <td class="py-4 px-6">
         In Stock
         </td>
-        <td class="py-4 px-6">
-        <input id="prod-amount-${product.id}" type="number" value="${this.cart[product.id]}" min="1"> 
-        </td>
+        <td class="py-4 px-6">`;
+
+        if (page === 'cart') {
+          html += `<input class="form-btn" id="prod-amount-${product.id}" type="number" value="${this.cart[product.id]}" min="1">`;
+        } else {
+          html += `<strong>${this.cart[product.id]}</strong>`;
+        }
+
+
+        html += `</td>
         <td class="py-4 px-6">$ 
         ${product.price * this.cart[product.id]}
         </td>`;
@@ -157,7 +168,8 @@ class Cart {
         delete this.cart[id];
       this.saveCart();
       this.updateBadge();
-      this.renderCart();
+
+      this.renderCheckout();
     }
   }
   updateAmount(event){
@@ -173,8 +185,23 @@ class Cart {
   }
   saveCart() {
     localStorage.setItem("cart", JSON.stringify(this.cart));
-    // withdrowCart();
-    // updateBadge();
+    
+  }
+  async saveOrder(){
+    let total = 0;
+    for (const productId in this.cart) {
+      const product = await this.productsService.getProductById(productId);
+      total += product.price * this.cart[productId];
+    }
+    let order = new Order(this.cart,total);
+    order.saveOrder();
+    this.cart = {};
+    this.saveCart();
+    this.withdrowCart();
+    this.updateBadge();
+    this.renderCheckout();
+
+
   }
   updateBadge() {
     document.querySelector(".cart-item-count").innerHTML = Object.keys(

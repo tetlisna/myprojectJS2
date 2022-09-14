@@ -25,17 +25,17 @@ class ProductList {
           
     }
     createProductDom(product) {
-        return ` <article class="product-box">
+        return ` <article class="product-box details">
         <h3 class="prod-title">${product.title}</h3>
-        <img src="${product.image}" alt="${product.title}">
+        <img class="prod-img" src="${product.image}" alt="${product.title}">
 
-            <div class="details">
             <div class="prod price">$ ${product.price}</div>
+            <div id="prod-details ">${product.description}</div>
             <input class="prod-amount" id="prod-amount-${product.id}" type="number" min="1" value="1">
             </div>
-        </div>
+        
         <button class="addtocart shop-btn" data-id="${product.id}">Add to cart</button>
-            </div>
+
             </div>
         </article> `;
     }

@@ -9,7 +9,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
   />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Cart</title>
+    <title>Orders</title>
   </head>
   <body>
     <!-- Nav left -->
@@ -23,9 +23,9 @@
             <li>
               <a href="/index.html" class="nav-link">Home</a>
             </li>
-            <li>
+            <!-- <li>
               <a href="/product.html" class="nav-link">Products</a>
-            </li>
+            </li> -->
             <li>
               <a href="/cart.html" class="nav-link">Cart</a>
             </li>
@@ -44,25 +44,23 @@
         </div> 
       </div>
     </nav>
-    <h3 class="header">Cart</h3>
+    <h3 class="header">Orders list</h3>
 
-    <section class="cart-products">
+    <section class="order-products">
       <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                   <th scope="col" class="py-3 px-6">
-                      Product name
+                      Order
                   </th>
                   <th scope="col" class="py-3 px-6">
-                      Amount
+                      Total price
                   </th>
                   <th scope="col" class="py-3 px-6">
-                      Price
+                      Date
                   </th>
-                  <th scope="col" class="py-3 px-6">
-                      Action
-                  </th>
+
               </tr>
           </thead>
           <tbody>
@@ -71,19 +69,11 @@
           </tbody>
         </table>
       </div>
-    <h3 class="title"></h3>
-    <div class="links">
-        <button class="addtocart shop-btn" data-id=${product.id}>Add to cart</button>
-        <a href="/product.html" class="shop-btn" data-id=${product.id}> Remove</a>
-    </div>
-
-    <div class="checkout">
-      <a href="/checkout.html">Checkout</a>
-    </div>
+ 
     </section>
-    <script src="/js/admin.js"></script>
-    <script src="/js/product-service.js"></script>
     <script src="/js/order.js"></script>
-    <script src="/js/cart.js"></script>
+    <script src="/js/product-service.js"></script>
+
+    <script src="/js/orders.js"></script>
   </body>
 </html>
